@@ -1,0 +1,3 @@
+anzghc@anz.com
+
+git remote add origin git@github.com:Sanghamitra1234/Toornament

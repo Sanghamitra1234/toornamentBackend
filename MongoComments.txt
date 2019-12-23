@@ -1,0 +1,44 @@
+db.games.update({gameArray:{$elemMatch:{tournamentName:'Pubg1'}}},{ $set: { 'gameArray.$.maxPeople' : -1 } })
+
+
+db.games.find().pretty();
+
+db.games.count()
+
+db.games.find({'gameName':'PUBG'});
+
+db.games.find({"gameArray.tournamentName":"PUBG22"})
+
+db.games.find({"gameArray":{$elemMatch:{"tournamentName":"PUBG22"}}})
+
+db.games.update({gameArray:{$elemMatch:{tournamentName:"PUBG99"}}},{ $set: { "gameArray.$.maxPeople" : 41 } })
+
+//{'gameName':'PUBG'}
+
+db.games.update({'gameName':'PUBG'},{$push:{gameArray:{ "tournamentDesc":"sab khelte hai",
+    "registrationFees":200,
+    "creatorId":"C1001",
+    "tournamentName":"PUBG300"}}})
+
+db.games.find({$and:[{"gameName":"PUBG"},
+{"gameArray":{$elemMatch:{"tournamentName":"PUBG22"}}}]})
+
+
+db.games.aggregate({ $unwind:"$gameArray" })
+db.games.aggregate({ $unwind:"$gameArray"},{$match:{'gameArray.tournamentName':"PUBG1"}})
+
+
+db.games.find({$and:[{"gameName":"PUBG"},
+        {"gameArray":{$elemMatch:{"tournamentName":"PUBG1070"}}}]})
+
+// "userName" : "Dean Rulnick",
+// 	"password" : "Dean Rulnick!123"
+
+db.users.find().pretty()
+
+db.users.find({"userName": "D"}).pretty()
+
+
+db.games.aggregate({$match:{'gameName':'PUBG'}},{ $unwind:"$gameArray" },{
+      $count: "Total_Count"
+    });
