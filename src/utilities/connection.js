@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 const {Schema}=require('mongoose');
-const url="mongodb://localhost:27017/toornament";
+//mongodb+srv://sanghamitra_hota:<password>@cluster0-3pqyb.mongodb.net/test?retryWrites=true&w=majority
+const url="mongodb+srv://sanghamitra_hota:kalhonaho4567@cluster0-3pqyb.mongodb.net/test?retryWrites=true&w=majority/toornament";
 // //Test
 // const url="mongodb://localhost:27017/toornamentTest";
 
