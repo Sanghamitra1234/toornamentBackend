@@ -8,6 +8,8 @@ const router = require('./routes/routing');
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/', router);
-app.listen(3000);
-console.log(' Restful Api server started on: 3000');
+
+app.listen(process.env.PORT || 3000, function(){
+    console.log(' Restful Api server started on: 3000');
+})
 
