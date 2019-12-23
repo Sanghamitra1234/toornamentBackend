@@ -3,6 +3,10 @@ const routing = express.Router();
 const setup = require('../models/dbSetUp');
 const games=require('../models/gamesManipulation');
 
+routing.get('/',(req,res)=>{
+    res.send("successfully started");
+})
+
 
 routing.get('/setup', (req, res) => {
         setup.setupGames().then(data=>{
